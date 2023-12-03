@@ -1,0 +1,21 @@
+/* tabs */
+#TabsToolbar, #toolbar-menubar, #main-menubar, #titlebar {
+  background-color: #c6c6c6 !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):not([pinned]):hover .tab-stack::after {
+  border-top: 1px solid #aaa !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::after {
+  background: var(--tab-selected-bgcolor, var(--toolbar-bgcolor)) !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]):not([pinned])::after {
+  background: var(--tab-selected-bgcolor, var(--toolbar-bgcolor)) !important;
+  border-top: 1px solid #aaa !important;
+}
+
+/* url bar */
+#urlbar-background, #searchbar {
+  border: 1px solid #ddd !important;
+  background: #fff !important;
+}

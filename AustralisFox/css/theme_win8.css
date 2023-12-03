@@ -1,0 +1,34 @@
+/* tabs */
+#TabsToolbar, #toolbar-menubar, #main-menubar, #titlebar {
+  background-color: #c6c6c6 !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):not([pinned]):hover .tab-stack::after {
+  border-top: 1px solid #aaa !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::after {
+  background: #f8f8f8 !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]):not([pinned])::after {
+  background: #f8f8f8 !important;
+  border-top: 1px solid #aaa !important;
+}
+
+/*navbar*/
+#nav-bar {
+  border-top: 1px solid rgba(10, 31, 51, 0.35) !important;
+  background: linear-gradient(to top, rgba(253,253,253,0.45), rgba(255,255,255,0)) !important;
+  box-shadow: 0 1px 0 rgba(253,253,253,0.45) inset !important;
+}
+
+/* url bar */
+#urlbar-background, #searchbar {
+  border: 1px solid #ddd !important;
+  background: #fff !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.01) inset, 0 1px 0 rgba(255,255,255,0.01) !important;
+}
+#urlbar-input,
+#urlbar-scheme, 
+.searchbar-textbox {
+  font-size: 12px !important;
+}

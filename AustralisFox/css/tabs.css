@@ -1,0 +1,165 @@
+/* -- tabs -- */
+
+/* all tabs */
+.tabbrowser-tab {
+  padding-top: 0px !important;
+  margin-right: -24px !important;
+}
+arrowscrollbox[overflowing] .tabbrowser-tab:not([pinned]) {
+  min-width: 200px !important;
+}
+arrowscrollbox:not([overflowing]) .tabbrowser-tab:not([pinned]) {
+  min-width: 225px !important;
+}
+.tab-background {
+  border-radius: var(--tab-border-radius);
+  margin-block: var(--tab-block-margin);
+  min-height: var(--tab-min-height);
+  box-shadow: none !important;
+  background: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  margin-bottom: -1px !important;
+  padding: 0 !important;
+  padding-top: 0px !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):hover .tab-background::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):hover .tab-background::after {
+  content: "";
+  background: url(../images/tab-stroke-start-holo.png);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -5px;
+  margin-top: 2px;
+  margin-bottom: -4px;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):hover .tab-background::after {
+  right: -5px;
+  left: unset;
+  background: url(../images/tab-stroke-end-holo.png);
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):not([pinned]):hover .tab-stack::after {
+  content: "";
+  background: transparent;
+  display: inline-block;
+  width: 172px;
+  position: absolute;
+  height: 33px;
+  z-index: -1;
+  margin-left: 25px;
+  margin-top: 7px;
+  z-index: 0; /* 121 */
+  min-width: 0;
+}
+arrowscrollbox[overflowing]  .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):not([pinned]):hover .tab-stack::after {
+  width: 66% !important;
+  width: 73% !important;
+  width: 75% !important;
+}
+.tab-content {
+  padding: 3px 16px 0 16px !important;
+  min-width: 0;
+  height: 30px !important;
+  margin-top: 6px;
+}
+/* inactive */
+.tabbrowser-tab:is(:not([visuallyselected], [multiselected]), :-moz-lwtheme):not(:hover):not(:first-of-type)::after {
+  content: "";
+  border-left: none;
+  height: 60%;
+  margin-top: 10px;
+  position: absolute;
+  margin-left: 10px;
+  z-index: 1;
+}
+/* new tab */
+#TabsToolbar .toolbarbutton-1 {
+  margin: 7px 0 0 13px !important;
+}
+
+
+/* active tab */
+.tabbrowser-tab[selected] {
+  z-index: 1222 !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::after {
+  content: "";
+  clip-path: polygon( 95.238% 6.247%,100% 6.247%,100% 100%,4.762% 100%,4.762% 97.201%,4.762% 97.201%,12.062% 96.406%,18.521% 94.867%,24.191% 92.587%,29.124% 89.572%,33.374% 85.824%,36.992% 81.347%,40.03% 76.144%,42.541% 70.22%,44.577% 63.578%,46.19% 56.222%,46.19% 56.222%,47.136% 50.654%,48.254% 44.456%,49.809% 37.91%,52.067% 31.302%,55.293% 24.915%,59.753% 19.034%,65.711% 13.942%,73.435% 9.924%,83.189% 7.265%);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -5px;
+  margin-top: 2.5px;
+  margin-bottom: -4px;
+  z-index: 19;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::after {
+  clip-path: polygon( 0% 6.247%,0% 6.247%,13.321% 7.265%,24.109% 9.924%,32.657% 13.942%,39.258% 19.034%,44.203% 24.915%,47.784% 31.302%,50.293% 37.91%,52.024% 44.456%,53.267% 50.654%,54.316% 56.222%,54.316% 56.222%,56.096% 63.578%,58.339% 70.22%,61.102% 76.144%,64.446% 81.347%,68.429% 85.824%,73.11% 89.572%,78.549% 92.587%,84.804% 94.867%,91.935% 96.406%,100% 97.201%,100% 97.201%,100% 100%,-5.263% 100%);
+  right: -6px;
+  left: unset;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]) .tab-stack::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]) .tab-stack::after {
+  content: "";
+  background: url(../images/tab-stroke-start-holo.png);
+  display: inline-block;
+  width: 32px;
+  height: 30px;
+  position: absolute;
+  left: -5px;
+  margin-top: 6px;
+  margin-bottom: -5px;
+  z-index: -1;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]) .tab-stack::after {
+  background: url(../images/tab-stroke-end-holo.png);
+  right: -8px;
+  left: unset;
+}
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, 
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  margin-bottom: -3px !important;
+  padding: 0 0 22px 0 !important;
+  padding-top: 0px !important;
+  height: 25px !important;
+  max-width: 174px !important;
+  margin-left: 24px !important;
+  height: 0 !important;
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  outline: none !Important;
+  display: block;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]):not([pinned])::after {
+  content: "";
+  display: inline-block;
+  width: 172px;
+  position: absolute;
+  height: 33px;
+  z-index: -1;
+  margin-left: 25px;
+  margin-top: 7px;
+}
+arrowscrollbox[overflowing] .tabbrowser-tab:not([pinned])::after {
+  content: "";
+  display: inline-block;
+  width: 172px;
+  position: absolute;
+  height: 33px;
+  z-index: -1;
+  margin-left: 25px;
+  margin-top: 7px; 
+  width: 66% !important;
+  width: 73% !important;
+  width: 75% !important;
+}

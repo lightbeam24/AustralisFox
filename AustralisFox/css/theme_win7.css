@@ -1,0 +1,57 @@
+/* tabs */
+#TabsToolbar, #toolbar-menubar, #main-menubar, #titlebar {
+  background: linear-gradient(to top, #8b9aad, #94a1b0, #6b7c8c) !important;
+}
+#TabsToolbar, #toolbar-menubar, #main-menubar, #titlebar {
+  background: linear-gradient(to top, #b6cee7, #98b4d0) !important;
+}
+
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is(:not([visuallyselected], [multiselected])):not([pinned]):hover .tab-stack::after {
+  border-top: 1px solid #889eb4 !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::before,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected])::after {
+  background: linear-gradient(to top, #e7f0f8, #f3f6f9) !important;
+}
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([selected], [multiselected]):not([pinned])::after {
+  background: linear-gradient(to top, #e7f0f8, #f3f6f9) !important;
+  border-top: 1px solid #889eb4 !important;
+}
+/* inactive brod */
+.tabbrowser-tab:is(:not([visuallyselected], [multiselected]), :-moz-lwtheme) {
+  border-bottom: 1px solid #889eb4 !important;
+}
+
+/* toolbar for skueo */
+.browser-toolbar:not(.titlebar-color) {
+  background: linear-gradient(to top,#dbeaf9, #e7f0f8);
+  border-top: 1px solid #889eb4 !important;
+  margin-top: -2.5px !important;
+}
+
+/* url bar */
+#urlbar-background, #searchbar {
+  border: 1px solid #b6c2cd !important;
+  background: #fff !important;
+}
+
+#back-button {
+  list-style-image: none !important;
+  background: linear-gradient(to top, #e4eef9, #f6f9fc) !important;
+}
+html #back-button::before {
+  background: no-repeat url(file:///home/light/snap/firefox/common/.mozilla/firefox/5b5bee4h.default/chrome/AustralisFox/images/aerotoolbar.png) -17px 3px !important;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 24px;
+  position: absolute;
+}
+
+/* bookmark toolbar */
+#PersonalToolbar {
+  background: #dbeaf9 !important;
+}
+#navigator-toolbox {
+  border-bottom: 1px solid #adbed1 !important;
+}
