@@ -1,0 +1,211 @@
+@import "AustralisFox/css/tabs.css"; /* tabs stuff [MUST BE ENABLED] */
+
+/* ----- themes [No more or less than 1 of these should be enabled] ----- */
+
+/*@import "AustralisFox/css/theme_adaptive.css"; /* Normal, adapts to themes */
+@import "AustralisFox/css/theme_win7.css"; /* Like win 7 */
+/*@import "AustralisFox/css/theme_win8.css"; /* Like win 8 */
+/*@import "AustralisFox/css/theme_snow_leopard.css"; /* Like Mac */
+
+
+/*#appMenu-popup panelview:not([visible]),
+#PanelUI-fxa:not([visible]), */
+#appMenu-popup:not([animate="open"]) {
+  transform: translate(150px, -180px) scale(0) translate(-150px, 180px) !important;
+  transform: translate(150px, -250px) scale(0) translate(-150px, 250px) !important;
+  transition-duration: 0.2s !important;
+  transition-delay: 0.1s !important;
+  opacity: 0 !important;
+  transition-timing-function: linear !important;
+}
+/*#appMenu-popup panelview[visible],
+#PanelUI-fxa[visible], */
+#appMenu-popup[animate="open"] {
+  animation-timing-function: linear;
+  width: 330px;
+  transform: translate(150px, -180px) scale(1) translate(-150px, 180px) !important;
+  transform: translate(150px, -250px) scale(1) translate(-150px, 250px) !important;
+  transition-duration: 0.2s !important;
+  transition-timing-function: linear !important;
+  transition-delay: 0.1s !important;
+  opacity: 1 !important;
+}
+#appMenu-multiView,
+#appMenu-popup .panel-viewcontainer,
+#appMenu-popup.panel-viewstack {
+  width: 330px;
+}
+#appMenu-protonMainView {
+  width: 320px !important;
+}
+/* FXA: Hide email address */
+#appMenu-fxa-status2[fxastatus="signedin"] #appMenu-fxa-label2 label {
+ opacity: 0 !important;
+}
+/* FXA: Inject and position text */
+#appMenu-fxa-status2[fxastatus="signedin"]::before {
+  content: "Firefox account";
+  position: relative;
+  left: calc(8px + 8px);
+  pointer-events: none;
+}
+
+/*navbar*/
+#nav-bar {
+  padding: 2px 0 2px 4px !important;
+}
+#urlbar-container {
+  margin-top: -2px !important;
+}
+
+/* url bar */
+html {
+--toolbarbutton-border-radius: 2px !important;
+}
+#urlbar-background, #searchbar {
+ /* border: 1px solid #ddd !important; */
+}
+#nav-bar toolbaritem[removable="false"] #urlbar #urlbar-background {
+  border-left: 1px solid transparent !important;
+}
+#urlbar-input::placeholder, .searchbar-textbox::placeholder {
+  opacity: 0.5 !important;
+  font-style: italic;
+}
+#urlbar-input, #urlbar-scheme, .searchbar-textbox {
+  font-size: 13px !important;
+}
+.localResource #identity-icon-box {
+  opacity: 0.8;
+  list-style-image: url(identity-icon.svg);
+}
+#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
+  list-style-image: url(AustralisFox/images/identity-icon.svg) !important;
+  opacity: 0.5 !important;
+}
+#identity-box[pageproxystate="valid"].weakCipher #identity-icon, 
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon, 
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon, 
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon, 
+#identity-box[pageproxystate="valid"].certErrorPage #identity-icon,
+/* secure */
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon, 
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon {
+  list-style-image: url(AustralisFox/images/connection-secure.svg) !important;
+	fill: #4d9a26 !important;
+	color: #4d9a26 !important;
+}
+/*
+#identity-box[pageproxystate="valid"].weakCipher #identity-icon:hover, 
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon:hover, 
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon:hover, 
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon:hover, 
+#identity-box[pageproxystate="valid"].certErrorPage #identity-icon:hover,
+/* secure 
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon:hover, 
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon:hover {
+  list-style-image: url(AustralisFox/images/identity-icon-hover.svg) !important;
+}
+*/
+#identity-box[pageproxystate="valid"].weakCipher #identity-icon::after, 
+#identity-box[pageproxystate="valid"].mixedDisplayContent #identity-icon::after, 
+#identity-box[pageproxystate="valid"].mixedDisplayContentLoadedActiveBlocked #identity-icon::after, 
+#identity-box[pageproxystate="valid"].certUserOverridden #identity-icon::after, 
+#identity-box[pageproxystate="valid"].certErrorPage #identity-icon::after,
+/* full secure */
+#identity-box[pageproxystate="valid"].verifiedDomain #identity-icon::after, 
+#identity-box[pageproxystate="valid"].mixedActiveBlocked #identity-icon::after {
+  content: "";
+  list-style-image: url(AustralisFox/images/connection-secure.svg) !important;
+	visibility: visible;
+	-moz-context-properties: fill;
+	fill: #4d9a26;
+	width: 20px;
+	height: 20px;
+}
+#urlbar[breakout][breakout-extend], 
+#urlbar[breakout][breakout-extend-disabled][open] {
+  z-index: 3;
+  position: absolute !important;
+  /*width: unset !important;*/
+  left: unset !important;
+  top: 4px !important;
+}
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: 26px !important;
+  padding-block: 1px !important;
+  padding-inline: 1px !important;
+}
+#urlbar:is([focused="true"] {
+  outline: none !important;
+}
+/*#urlbar:is([focused="true"], */
+[open]) > #urlbar-background, 
+#searchbar:focus-within {
+  box-shadow: none !important;
+  outline-color: #999 !important;
+  outline-width: 1px !important;
+}
+.searchbar-search-icon {
+  list-style-image: none !important;
+  opacity: 0.5 !important;
+  width: 16px !important;
+  background: url(AustralisFox/images/search-indicator.png) !important;
+  height: 20px !important;
+  margin-inline: 4px 4px !important;
+}
+
+/* backforward */
+/* back */
+#back-button {
+  list-style-image: url(AustralisFox/images/back-large.svg) !important;
+  background: #f4f4f4;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  padding: 0 2px !important;
+  z-index: 1202;
+}
+#forward-button {
+  list-style-image: url(AustralisFox/images/forward.svg) !important;
+  transition-duration: 0.2s !important;
+  transition-timing-function: linear;
+  margin-right: 0px !important; /* -4 */
+  border: 1px solid #ccc;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(204, 204, 204);
+  padding: 0;
+  height: 26px !important;
+  margin-top: 4px !important;
+  margin-left: -6px !important;
+  border-left: none;
+  padding-right: 0 !important;
+}
+#back-button .toolbarbutton-icon,
+#forward-button .toolbarbutton-icon {
+  background: none !important;
+}
+#back-button:hover, 
+#forward-button:hover {
+  background: linear-gradient(to top,#d5d5d5,#fbfbfb) !important;
+}
+#forward-button[disabled] {
+  margin-right: -31px !important;
+}
+#urlbar {
+  padding-left: 5px;
+  margin-left: -5px;
+  border-left: none !important;
+}
+/* menu buttons */
+#PanelUI-menu-button {
+  list-style-image: url(AustralisFox/images/menu.svg) !important;
+}
+#downloads-button #downloads-indicator-anchor {
+  list-style-image: url(AustralisFox/images/download.svg) !important;
+}
+#downloads-button[attention="success"] #downloads-indicator-anchor {
+  list-style-image: url(AustralisFox/images/download-glow-menuPanel.png) !important;
+  height: 22px !important;
+  width: 22px !important;
+}
