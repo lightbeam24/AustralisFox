@@ -1,7 +1,7 @@
 # AustralisFox
 An Australis theme for modern Firefox.
 
-This theme is unfinished, as I lost interest in it. There are multiple severe bugs (especially on Windows), and lots of ugly code inside. But as long as you're using Linux, it should be fairly usable.
+This theme is unfinished, as I lost interest in it. There are some bugs, but it's mostly usable.
 
 # Requirements:
 
