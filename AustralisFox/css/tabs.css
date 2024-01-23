@@ -1,5 +1,8 @@
 /* -- tabs -- */
-
+/* fix windows bug */
+tab {
+  position: relative;
+}
 /* all tabs */
 .tabbrowser-tab {
   padding-top: 0px !important;
